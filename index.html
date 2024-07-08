@@ -106,7 +106,7 @@
       <h1>Nathalia Stoller</h1>
       <h1>Voce me perdoa?</h1>
       <div class="button">
-        <button id="sim">Sim</button>
+        <button id="sim" onclick="OnsimClick()">Sim</button>
         <div id="nao-container">
           <button onmouseover="Fuja()" id="nao">Não</button>
         </div>
@@ -147,6 +147,11 @@
         botaoNao.style.left = aleatorioX + "px";
         botaoNao.style.top = aleatorioY + "px";
       }  
+
+function OnsimClick(){
+  alert("Obrigado por me perdoar, te amo muito");
+}
+
         </script>
   </body>
 </html>
