@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desculpa</title>
+    <style>
+      body {
+        display: flex;
+        margin: 0;
+        padding: 0;
+        background-color: rgb(31, 23, 23);
+      }
+
+      .principal {
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        background-color: white;
+        height: 45vh;
+        width: 60vh;
+        border-radius: 20px;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        font-size: small;
+        min-width: 360px;
+        min-height: 400px;
+      }
+      .sidebar {
+        flex-direction: column;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        width: 50vh;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Duas colunas */
+        gap: 0px; /* Espaçamento entre as imagens */
+      }
+      .sidebar img {
+        width: 80%;
+        height: auto;
+        object-fit: cover; /* Mantém a proporção da imagem */
+        min-width: 113px;
+        min-height: 100px;
+        background-color: blue;
+      }
+      .button {
+        width: 70%;
+        margin-top: 10px;
+        display: flex;
+        position: relative;
+        justify-content: center;
+      }
+      #nao-container {
+        position: relative;
+      }
+      #sim {
+        background-color: green;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        width: 60px;
+        height: 40px;
+        cursor: pointer;
+      }
+      #nao {
+        position: absolute;
+        background-color: red;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        width: 60px;
+        height: 40px;
+        cursor: pointer;
+        margin-left: 40px;
+      }
+      a {
+        text-decoration: none;
+        color: black;
+      }
+      img {
+        width: 120px;
+        height: 120px;
+        margin: auto;
+      }
+      .imagem {
+        margin-top: 30px;
+       
+
+      }
+    </style>
+  </head>
+  <body>
+    <sidebar class="sidebar">
+      <img src="Images/Italiano1.jpg" alt=""></img>
+      <img src="Images/Dedodedeus.jpg" alt=""></img>
+      <img src="Images/Dormindo.jpg" alt=""></img>
+      <img src="Images/FlorestaSp.jpg" alt=""></img>
+      <img src="Images/Pedidonamoro.jpg" alt=""></img>
+      <img src="Images/Praia1.jpg" alt=""></img>
+
+    </sidebar>
+    <mid class="principal">
+      <h1>Nathalia Stoller</h1>
+      <h1>Voce me perdoa?</h1>
+      <div class="button">
+        <button id="sim">Sim</button>
+        <div id="nao-container">
+          <button onmouseover="Fuja()" id="nao">Não</button>
+        </div>
+      </div>
+      <div class="imagem">
+        <img
+          src="https://media1.tenor.com/images/fa494e85b6099eda29f75fa0ae547e7a/tenor.gif?itemid=11455412"
+          alt=""
+        />
+      </div>
+
+      <h2>Te amo</h2>
+    </mid>
+    <sidebar class="sidebar">
+      <img src="Images/ShowColdplay.jpg" alt=""></img>
+      <img src="Images/Italiano3.jpg" alt=""></img>
+      <img src="Images/PonteSP.jpg" alt=""></img>
+      <img src="Images/Carnaval.jpg" alt=""></img>
+      <img src="Images/FestaJunina.jpg" alt=""></img>
+      <img src="Images/Formatura.jpg" alt=""></img>
+    </sidebar>
+
+    <script>
+    function Fuja() {
+        var botaoNao = document.getElementById("nao");
+        var container = document.querySelector(".principal");
+        var maxX = container.offsetWidth - botaoNao.offsetWidth;
+        var maxY = container.offsetHeight - botaoNao.offsetHeight;
+        var aleatorioX = Math.floor(Math.random() * maxX);
+        var aleatorioY = Math.floor(Math.random() * maxY);
+
+        // Ajusta posição para evitar sair da tela
+        if (aleatorioX < 0) aleatorioX = 0;
+        if (aleatorioY < 0) aleatorioY = 0;
+        if (aleatorioX > maxX) aleatorioX = maxX;
+        if (aleatorioY > maxY) aleatorioY = maxY;
+
+        botaoNao.style.left = aleatorioX + "px";
+        botaoNao.style.top = aleatorioY + "px";
+      }  
+        </script>
+  </body>
+</html>
